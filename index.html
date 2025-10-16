@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>Weather</h1>
+        <div class="controls">
+          <button id="geoBtn" class="btn subtle">📍 My Location</button>
+          <button id="unitsBtn" class="btn subtle">°C</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <form id="searchForm" class="search-bar">
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Enter city (e.g. London)"
+          />
+          <button type="submit" id="searchBtn">Search</button>
+        </form>
+
+        <div id="loading" class="loading hidden">Loading...</div>
+        <div id="error" class="error hidden"></div>
+
+        <div id="weatherWrap" class="weather-wrap hidden">
+          <div id="skeleton" class="skeleton hidden"></div>
+
+          <div class="current">
+            <div class="left">
+              <div id="weatherIcon" class="weather-icon"></div>
+              <div class="temp" id="temp">--°C</div>
+              <div class="desc" id="desc">--</div>
+            </div>
+            <div class="right">
+              <div id="location" class="location">--</div>
+              <div>Feels like: <span id="feels">--°</span></div>
+              <div>Humidity: <span id="humidity">--%</span></div>
+              <div>Wind: <span id="wind">-- m/s</span></div>
+            </div>
+          </div>
+
+          <h3>5-Day Forecast</h3>
+          <div id="forecast" class="forecast-grid"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
